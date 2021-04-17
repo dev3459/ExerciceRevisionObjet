@@ -1,3 +1,19 @@
+<?php
+    require 'Classes/DB.php';
+    require 'Classes/Users.php';
+
+    $db = new DB();
+    $link = $db->getDbLink();
+
+    $user = new Users($link);
+
+    foreach ($user->getUsers() as $users){
+        echo $users["nom"] ." ";
+        echo $users["prenom"] ."<br>";
+    }
+
+?>
+
 <!doctype html>
 <html lang="fr">
 <head>
